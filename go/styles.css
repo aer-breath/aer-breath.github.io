@@ -6,3 +6,5 @@
 /* Decorative light must stay inside the composition on narrow screens. */
 .art-glow{inset:65px 0 0}.features{font-size:12px}.telegram-link{font-size:11px}.hero-proof{font-size:11px}.preview-note{font-size:10px}.questions summary{font-size:13px}.questions details p{font-size:12px}.steps-panel li{font-size:13px}.intro-strip p{font-size:12px}.app-description{font-size:14px}
 @media(max-width:360px){.phone-youcan{right:5%}}
+
+.alternate-app[hidden]{display:none}
