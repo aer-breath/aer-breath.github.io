@@ -1,6 +1,6 @@
-const CACHE="aer-breath-db7560316ca7", SCOPE="/", URLS=["/432hz_2.mp3","/aer-icon.png","/aer-og.png","/analytics-config.json","/assets/CoachChat-hW_MJCB5.js","/assets/index-C05-ZrM5.js","/assets/index-CkZYnIYx.css","/exhale_2.mp3","/heart-beating.mp3","/icon-192.png","/icon-512.png","/index.html","/inhale.mp3","/manifest.webmanifest","/vendor/README.txt","/vendor/telegram-web-app.js","/youcan-icon.png"];
+const CACHE="aer-standalone-6d68d51c4a78", SCOPE="/", URLS=["/432hz_2.mp3","/aer-icon.png","/aer-og.png","/analytics-config.json","/assets/CoachChat-hW_MJCB5-2d30900c61.js","/assets/index-C05-ZrM5-2d30900c61.js","/assets/index-CkZYnIYx-2d30900c61.css","/exhale_2.mp3","/heart-beating.mp3","/icon-192.png","/icon-512.png","/index.html","/inhale.mp3","/manifest.webmanifest","/vendor/README.txt","/vendor/telegram-web-app.js","/youcan-icon.png"];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE).then(c => c.addAll(URLS))); });
-self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('aer-breath-') && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
+self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('aer-standalone-') && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', event => {
  const url = new URL(event.request.url);
  if (event.request.method !== 'GET' || url.origin !== self.location.origin || !url.pathname.startsWith(SCOPE)) return;
