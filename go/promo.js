@@ -1,5 +1,5 @@
-import{copy}from'./copy.mjs?v=b9cc9ee93587';
-import{detectedDevice}from'./device.mjs?v=b9cc9ee93587';
+import{copy}from'./copy.mjs?v=17757081c9d1';
+import{detectedDevice}from'./device.mjs?v=17757081c9d1';
 const urls={aer:{web:'https://aer-breath.github.io/?utm_source=apps_hub',store:'https://apps.apple.com/app/id6761077610'},youcan:{web:'https://youcan-habits.github.io/?utm_source=apps_hub',store:'https://apps.apple.com/app/id6768371723'}};
 const shareURL='https://aer-breath.github.io/go/';
 const languages=navigator.languages?.length?navigator.languages:[navigator.language];
@@ -35,6 +35,7 @@ function render(){
 }
 document.getElementById('language').addEventListener('click',()=>{language=language==='uk'?'en':'uk';try{localStorage.setItem('apps.promo.language',language);}catch{}render();});
 document.querySelectorAll('[data-device]').forEach(e=>e.addEventListener('click',()=>{guideDevice=e.dataset.device;renderDevice();}));
+document.querySelector('.nav-how').addEventListener('click',()=>{document.getElementById('how').open=true;});
 let toastTimer;
 function toast(message){const e=document.getElementById('share-status');e.textContent=message;e.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>e.classList.remove('show'),7000);}
 document.getElementById('share').addEventListener('click',async()=>{
